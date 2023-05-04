@@ -1,0 +1,82 @@
+<div class="titulo">
+    <h1 >Cursos </h1>
+    </div>
+    <div class="buscador">
+    <mat-form-field class="w-full">
+      <mat-label><mat-icon>search</mat-icon> Buscar curso</mat-label>
+      <input matInput (keyup)="aplicarFiltros($event)" placeholder="Ex. ium" #input>
+    </mat-form-field>
+    </div>
+    
+    <table mat-table [dataSource]="dataSource">
+    
+      <ng-container matColumnDef="id">
+        <th appFontSize mat-header-cell *matHeaderCellDef>ID</th>
+        <td mat-cell *matCellDef="let curso"> {{curso.id}} </td>
+      </ng-container>
+    
+      <ng-container matColumnDef="nombre">
+        <th appFontSize mat-header-cell *matHeaderCellDef>Curso</th>
+        <td mat-cell *matCellDef="let curso">
+          {{curso.nombre }}
+        </td>
+      </ng-container>
+    
+      <ng-container matColumnDef="profesor">
+        <th appFontSize mat-header-cell *matHeaderCellDef>Profesor</th>
+        <td mat-cell *matCellDef="let curso"> {{curso.profesor}} </td>
+      </ng-container>
+    
+      <ng-container matColumnDef="vacantes">
+        <th appFontSize mat-header-cell *matHeaderCellDef>Vacantes</th>
+        <td mat-cell *matCellDef="let curso"> {{curso.vacantes}} </td>
+      </ng-container>
+    
+      <ng-container matColumnDef="fecha_inicio">
+        <th appFontSize mat-header-cell *matHeaderCellDef>Inicio de curso</th>
+        <td mat-cell *matCellDef="let curso"> {{curso.fecha_inicio | date: 'dd/MM/YYYY'  }} </td>
+      </ng-container>
+    
+    
+      <ng-container matColumnDef="edit">
+        <th appFontSize mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let curso">   <div class="add">
+          <button (click)="editarCurso(curso)" mat-flat-button>
+            <mat-icon>edit</mat-icon>
+      
+          </button>
+      </div>
+      </ng-container>
+      <ng-container matColumnDef="ver_detalle">
+        <th appFontSize mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let curso">   <div class="add">
+          <button (click)="irAlDetalle(curso.id)" mat-flat-button>
+            <mat-icon>visibility</mat-icon>
+      
+          </button>
+      </div>
+      </ng-container>
+    
+      <ng-container matColumnDef="delete">
+        <th appFontSize mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let curso">   <div class="add">
+          <button (click)="delete(curso)" mat-flat-button>
+            <mat-icon>delete</mat-icon>
+      
+          </button>
+      </div>
+      </ng-container>
+    
+      
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+     
+    </table>
+    
+    <div class="add">
+      <button (click)="abrirABMCursos()" color="primary" mat-flat-button>
+        <mat-icon>assignment_add</mat-icon>
+        Agregar nuevo Curso
+      </button>
+    
+      
