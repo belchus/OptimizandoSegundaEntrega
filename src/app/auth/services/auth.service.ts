@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { Observable, BehaviorSubject, map, catchError, throwError } from 'rxjs';
+import { Observable, BehaviorSubject, map, catchError, throwError, of } from 'rxjs';
 import { Usuario } from 'src/app/core/models/alumnos.model';
 import { enviroment } from 'src/enviroments/enviroments.prod';
 
@@ -76,7 +76,10 @@ export interface LoginFormValue {
           }),
           catchError((err) => {
             alert('Error al verificar el token');
-            return throwError(() => err);
+          //si esta caida la api
+           return of (false);
+           //sino usar
+           //return throwError(() => err);
           })
         );
     }
