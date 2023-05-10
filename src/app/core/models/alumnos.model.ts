@@ -1,14 +1,4 @@
-export class Alumnos {
-    constructor(
-      public id: number,
-      public firstName: string,
-      public lastName: string,
-      public email: string,
-   //  public number: number| null,
-     public fechaDeEntregable: Date,
-     public  promedio: number,
-    ) {}
-  }
+
 
   export interface Usuario {
     id: number;
@@ -17,6 +7,7 @@ export class Alumnos {
     role: string;
     email: string;
     token: string;
+    password:string;
   }
 
 
@@ -37,4 +28,13 @@ export class Alumnos {
     vacantes:number;
     fecha_inicio: Date;
   }
+  export interface CrearAlumnoPayload {
+    nombre: string;
+    apellido:string;
+    email:string;
+    promedio:number;
+    fecha_registro: Date;
+  }
+  
+
   

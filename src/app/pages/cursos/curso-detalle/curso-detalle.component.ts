@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Curso } from '../cursos.component';
 import { Subject, takeUntil } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
-import { CursosService } from '../../tablas/services/cursos.service';
+import { CursosService } from '../services/cursos.service';
 
 @Component({
   selector: 'app-curso-detalle',
@@ -19,7 +19,7 @@ export class CursoDetalleComponent {
     private activatedRoute: ActivatedRoute,
     private alumnosService: CursosService,
   ) {
-    this.alumnosService.obtenerAlumnoPorId(parseInt(this.activatedRoute.snapshot.params['id']))
+    this.alumnosService. getCursoById(parseInt(this.activatedRoute.snapshot.params['id']))
       .pipe(takeUntil(this.destroyed$))
       .subscribe((cursos) => this.cursos = cursos);
   }

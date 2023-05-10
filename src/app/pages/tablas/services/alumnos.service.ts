@@ -1,6 +1,9 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable, Subject, map } from 'rxjs';
+import { BehaviorSubject, Observable, Subject, map, mergeMap, take, tap } from 'rxjs';
 import { Alumno } from '../tablas.component';
+import { HttpClient } from '@angular/common/http';
+import { enviroment } from 'src/enviroments/enviroments.prod';
+import { CrearAlumnoPayload } from 'src/app/core/models/alumnos.model';
 
 
 @Injectable({
@@ -9,72 +12,77 @@ import { Alumno } from '../tablas.component';
 export class AlumnosService {
 
  
-  private estudiantes2$ = new Subject<Alumno[]>();
+  private estudiantes2$ = new BehaviorSubject<Alumno[]>(
+    []);
 
-  // BehaviorSubject
-  private estudiantes$ = new BehaviorSubject<Alumno[]>([
-    {
-        id: 1,
-        nombre: 'Camila',
-        apellido: 'Arena',
-        email:'arenabelu@gmail.com',
-        promedio:9,
-        fecha_registro: new Date(),
   
-  
-      },
-      {
-        id: 2,
-        nombre: 'Lucia',
-        apellido: 'Velazques',
-        email: 'luciave@gmail.com',
-        promedio:5,
-        fecha_registro: new Date(),
-  
-        
-      },
-      {
-        id: 3,
-        nombre: 'Matias',
-        apellido: 'Carmona',
-        email:'maticarmona@gmail.com',
-        promedio:6,
-        fecha_registro: new Date(),
-   
-      
-      },
-      {
-        id: 4,
-        nombre: 'Nicolas',
-        apellido: 'Perez',
-        email:'perezn@gmail.com',
-        promedio:7,
-        fecha_registro: new Date(),
-   
-      
-      },
-      {
-        id: 5,
-        nombre: 'Abigail',
-        apellido: 'Gomez',
-        email:'abigomez@gmail.com',
-        promedio:4,
-        fecha_registro: new Date(),
-   
-      
-      },
-  ])
 
-  constructor() { }
+  constructor(
+    private httpClient: HttpClient
+  ) {}
+
+  get alumnos(): Observable<Alumno[]> {
+    return this.estudiantes2$.asObservable();
+  }
 
   obtenerAlumnos(): Observable<Alumno[]> {
-    return this.estudiantes$.asObservable();
+    return this.httpClient.get<Alumno[]>(`${enviroment.apiBaseUrl}/alumnos`)
+    .pipe(
+      tap((alumnos) => this.estudiantes2$.next(alumnos)),
+      mergeMap(() => this.estudiantes2$.asObservable())
+    );
   }
 
   obtenerAlumnoPorId(id: number): Observable<Alumno | undefined> {
-    return this.estudiantes$.asObservable()
+    return this.estudiantes2$.asObservable()
       .pipe(
         map((alumnos) => alumnos.find((a) => a.id === id))
       )
+  }
+
+  crearAlumno(payload: CrearAlumnoPayload): Observable<Alumno[]> {
+    this.estudiantes2$
+      .pipe(
+        take(1)
+      )
+      .subscribe({
+        next: (alumnos) => {
+          this.estudiantes2$.next([
+            ...alumnos,
+            {
+              id: alumnos.length + 1,
+              ...payload,
+            },
+          ]);
+        },
+        complete: () => {},
+        error: () => {}
+      });
+
+
+    return this.estudiantes2$.asObservable();
+  }
+  editarAlumno(cursoId: number, actualizacion: Partial<Alumno>): Observable<Alumno[]> {
+    this.estudiantes2$
+      .pipe(
+        take(1),
+      )
+    return this.estudiantes2$.asObservable();
+  }
+  eliminarAlumno(alumnoId: number): Observable<Alumno[]> {
+    this.estudiantes2$
+    .pipe(
+      take(1)
+    )
+    .subscribe({
+      next: (alumnos) => {
+        const alumnoActualizado = alumnos.filter((curso) => curso.id !== alumnoId)
+        this.estudiantes2$.next(alumnoActualizado);
+      },
+      complete: () => {},
+      error: () => {}
+    });
+
+    return this.estudiantes2$.asObservable();
   }
 }
