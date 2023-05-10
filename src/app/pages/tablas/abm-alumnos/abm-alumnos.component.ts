@@ -14,12 +14,14 @@ export class AbmAlumnosComponent {
   apellidoControl = new FormControl('', [Validators.required]);
   emailControl = new FormControl('', [Validators.required]);
   promedioControl = new FormControl('', [Validators.required]);
+  avatarControl = new FormControl('', [Validators.required]);
 
   alumnosForm = new FormGroup({
     nombre: this.nombreControl,
     apellido: this.apellidoControl,
     email:this.emailControl,
     promedio: this.promedioControl,
+    avatar:this.avatarControl,
   });
 
   constructor(private dialogRef: MatDialogRef<AbmAlumnosComponent>) {}

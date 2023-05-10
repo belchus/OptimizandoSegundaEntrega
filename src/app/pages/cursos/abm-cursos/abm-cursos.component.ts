@@ -13,12 +13,13 @@ export class AbmCursosComponent {
     nombreControl = new FormControl('', [Validators.required]);
     vacantesControl = new FormControl('', [Validators.required]);
     profesorControl = new FormControl('', [Validators.required]);
-  
+    iconoControl= new FormControl('', [Validators.required]);
   
     cursosForm = new FormGroup({
       nombre: this.nombreControl,
       vacantes: this.vacantesControl,
       profesor: this.profesorControl,
+      icono:this.iconoControl,
  
     });
   

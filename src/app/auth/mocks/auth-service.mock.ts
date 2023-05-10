@@ -11,6 +11,7 @@ import { BehaviorSubject, Observable, of } from "rxjs";
         role: 'admin',
         token: '199917ABC',
         password: '12312312',
+        avatar:'imagenpng',
       }
       
       export class AuthServiceMock {

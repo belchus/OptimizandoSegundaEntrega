@@ -17,6 +17,12 @@
     <td mat-cell *matCellDef="let usuario"> {{usuario.id}} </td>
   </ng-container>
 
+  <ng-container matColumnDef="avatar">
+    <th appFontSize mat-header-cell *matHeaderCellDef></th>
+    <td mat-cell *matCellDef="let usuario"> {{usuario.avatar}} </td>
+  </ng-container>
+
+
   <ng-container matColumnDef="nombreCompleto">
     <th appFontSize mat-header-cell *matHeaderCellDef>Nombre completo</th>
     <td mat-cell *matCellDef="let usuario">

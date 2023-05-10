@@ -7,7 +7,8 @@
             "email":"arenabelu@gmail.com",
             "password":"camila2",
             "token":"abc43",
-            "role": "admin"
+            "role": "admin",
+            "avatar":"img.com"
         },  {
             "id":2,
             "nombre":"prueba",
@@ -15,92 +16,118 @@
             "email":"esprueba@gmail.com",
             "password":"prueba2",
             "token":"defg54",
-            "role": "user"
+            "role": "user",
+            "avatar":"img.com"
         }
     ],
     "cursos":[
         {
             "id": 1,
+            "icono":"img.com",
             "nombre": "Python",
             "profesor": "Manuel Rodriguez",
-            "vacantes":9
+            "vacantes":9,
+            "fecha_inicio":"09/20/23"
+         
           
       
           },
           {
             "id": 2,
+            "icono":"img.com",
             "nombre": "Base de Datos",
             "profesor": "Manuel Rodriguez",
-            "vacantes":20
+            "vacantes":20,
+            "fecha_inicio":"10/10/23"
+           
  
             
           },
           {
           "id": 3,
+          "icono":"img.com",
             "nombre": "Angular",
             "profesor": "Lucas Pilar",
-            "vacantes":5
+            "vacantes":5,
+            "fecha_inicio":"05/10/23"
+          
         
        
           
           },
           {
             "id": 4,
+            "icono":"img.com",
             "nombre": "Desarrollo web",
             "profesor": "Melisa Morales",
-            "vacantes":25
+            "vacantes":25,
+            "fecha_inicio":"11/12/23"
+          
          
        
           
           },
           {
             "id": 5,
+            "icono":"img.com",
             "nombre": "Java",
             "profesor": "Horacio Gomez",
-            "vacantes":15
-         
-       
+            "vacantes":15,
+            "fecha_inicio":"05/12/23"
+          
           
           }
     ],
     "Alumnos":[
       {
-        "id": 1,
+        
+      "id": 1,
+      "avatar":"img.com",
       "nombre": "Camila",
       "apellido": "Arena",
       "email":"arenabelu@gmail.com",
-      "promedio":9
+      "promedio":9,
+      "fecha_registro":"10/05/2022"
+
     
       },
       {
         "id": 2,
+        "avatar":"img.com",
         "nombre": "Lucia",
         "apellido": "Velazques",
         "email":"luciave@gmail.com",
-        "promedio":5
+        "promedio":5,
+        "fecha_registro":"10/05/2022"
 
       },
       {
         "id": 3,
+        "avatar":"img.com",
       "nombre": "Matias",
       "apellido": "Carmona",
       "email":"maticarmona@gmail.com",
-      "promedio":6
+      "promedio":6,
+      "fecha_registro":"10/08/2022"
       },
       {
         "id": 4,
+        "avatar":"img.com",
         "nombre": "Nicolas",
         "apellido": "Perez",
         "email":"perezn@gmail.com",
-        "promedio":7
+        "promedio":7,
+        "fecha_registro":"9/03/2022"
        
       },
       {
         "id": 5,
+        "avatar":"img.com",
         "nombre": "Abigail",
         "apellido": "Gomez",
         "email":"abigomez@gmail.com",
-       "promedio":4
+       "promedio":4,
+       "fecha_registro":"02/05/2023"
       }
     ]
 }

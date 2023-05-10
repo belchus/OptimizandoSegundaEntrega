@@ -34,8 +34,22 @@
         >
         <mat-error *ngFor="let error of vacantesControl.errors | keyvalue">{{ error | controlErrorMessages }}</mat-error>
       </mat-form-field>
+     
+      
     </div>
-
+    <div class="col-12 field">
+      <mat-form-field class="w-full">
+        <mat-label appFontSize>Icono</mat-label>
+        <input
+          [formControl]="iconoControl"
+          type="text"
+          matInput
+        >
+        <mat-error *ngFor="let error of iconoControl.errors | keyvalue">{{ error | controlErrorMessages }}</mat-error>
+      </mat-form-field>
+     
+      
+    </div>
   </form>
 </div>
 

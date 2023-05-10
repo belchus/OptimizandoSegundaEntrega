@@ -22,7 +22,7 @@ export class CursosComponent {
 
   
       dataSource = new MatTableDataSource();
-     displayedColumns: string[] = ['id', 'nombre','profesor', 'vacantes','fecha_inicio','delete','ver_detalle','edit'];
+     displayedColumns: string[] = ['id', 'icono','nombre','profesor', 'vacantes','fecha_inicio','delete','ver_detalle','edit'];
     
   cursosSuscription: Subscription | null = null;
 

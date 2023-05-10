@@ -8,6 +8,7 @@
     email: string;
     token: string;
     password:string;
+    avatar:string;
   }
 
 
@@ -17,6 +18,7 @@
     profesor:string;
     vacantes:number;
     fecha_inicio: Date;
+    icono:string;
     
   }
 
@@ -27,12 +29,14 @@
     profesor:string;
     vacantes:number;
     fecha_inicio: Date;
+    icono:string;
   }
   export interface CrearAlumnoPayload {
     nombre: string;
     apellido:string;
     email:string;
     promedio:number;
+    avatar:string;
     fecha_registro: Date;
   }
   

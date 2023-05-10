@@ -12,9 +12,7 @@ import { RouterModule } from '@angular/router';
 import {MatListModule} from '@angular/material/list';
 import { CursosComponent } from '../pages/cursos/cursos.component';
 import { CursosModule } from '../pages/cursos/cursos.module';
-import { CursoDetalleComponent } from '../pages/cursos/curso-detalle/curso-detalle.component';
-import { AlumboDetalleComponent } from '../pages/tablas/alumbo-detalle/alumbo-detalle.component';
-import { TablasComponent } from '../pages/tablas/tablas.component';
+import {MatCardModule} from '@angular/material/card';
 @NgModule({
   declarations: [
     DashboardComponent
@@ -30,6 +28,7 @@ import { TablasComponent } from '../pages/tablas/tablas.component';
     RouterModule,
     MatListModule,
     CursosModule,
+   MatCardModule,
     RouterModule.forChild([
       {
         path: 'estudiantes',

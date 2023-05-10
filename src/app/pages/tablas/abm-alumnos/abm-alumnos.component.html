@@ -46,6 +46,17 @@
         >
         <mat-error *ngFor="let error of promedioControl.errors | keyvalue">{{ error | controlErrorMessages }}</mat-error>
       </mat-form-field>
+      </div>
+      <div class="col-12 field">
+      <mat-form-field class="w-full">
+        <mat-label appFontSize>Avatar</mat-label>
+        <input
+          [formControl]="avatarControl"
+          type="text"
+          matInput
+        >
+        <mat-error *ngFor="let error of avatarControl.errors | keyvalue">{{ error | controlErrorMessages }}</mat-error>
+      </mat-form-field>
     </div>
   </form>
 </div>

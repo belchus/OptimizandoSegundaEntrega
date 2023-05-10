@@ -24,6 +24,7 @@
     <img width="50" height="50" src="../../assets/img/avatar.svg">
 
     <p>{{ (authUser$ | async)?.nombre }}</p>
+    <p>{{ (authUser$ | async)?.apellido }}</p>
     <p>{{ (authUser$ | async)?.email }}</p>
 
     <mat-nav-list>
@@ -37,7 +38,7 @@
 
     <router-outlet>
     </router-outlet>
-
+  
   </main>
-
+ 
 </mat-drawer-container>

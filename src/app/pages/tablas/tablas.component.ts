@@ -13,6 +13,7 @@ export interface Alumno {
   apellido: string;
   email: string;
   promedio:number;
+  avatar:string;
   fecha_registro: Date;
 
 
@@ -27,7 +28,7 @@ export class TablasComponent {
  
   dataSource = new MatTableDataSource();
 
-  displayedColumns: string[] = ['id', 'nombreCompleto','email', 'promedio','fecha_registro','delete','ver_detalle','edit'];
+  displayedColumns: string[] = ['id','avatar', 'nombreCompleto','email', 'promedio','fecha_registro','delete','ver_detalle','edit'];
 
 
   alumnosSuscription: Subscription | null = null;
