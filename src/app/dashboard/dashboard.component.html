@@ -21,7 +21,7 @@
 <mat-drawer-container class="example-container" autosize>
   <mat-drawer [opened]="true" #drawer class="example-sidenav" mode="side">
 
-    <img width="50" height="50" src="../../assets/img/avatar.svg">
+    <img width="50" height="50" src="{{(authUser$ | async)?.avatar}}">
 
     <p>{{ (authUser$ | async)?.nombre }}</p>
     <p>{{ (authUser$ | async)?.apellido }}</p>

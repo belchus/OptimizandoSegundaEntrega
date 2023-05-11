@@ -8,7 +8,7 @@
             "password":"camila2",
             "token":"abc43",
             "role": "admin",
-            "avatar":"img.com"
+            "avatar":"https://cdn.pixabay.com/photo/2021/01/04/10/41/icon-5887126_960_720.png"
         },  {
             "id":2,
             "nombre":"prueba",
@@ -17,13 +17,13 @@
             "password":"prueba2",
             "token":"defg54",
             "role": "user",
-            "avatar":"img.com"
+            "avatar":"https://cdn.pixabay.com/photo/2021/01/04/10/41/icon-5887126_960_720.png"
         }
     ],
     "cursos":[
         {
             "id": 1,
-            "icono":"img.com",
+            "icono":"https://cdn3.iconfinder.com/data/icons/logos-and-brands-adobe/512/267_Python-512.png",
             "nombre": "Python",
             "profesor": "Manuel Rodriguez",
             "vacantes":9,
@@ -34,7 +34,7 @@
           },
           {
             "id": 2,
-            "icono":"img.com",
+            "icono":"https://cdn-icons-png.flaticon.com/512/1420/1420398.png",
             "nombre": "Base de Datos",
             "profesor": "Manuel Rodriguez",
             "vacantes":20,
@@ -45,7 +45,7 @@
           },
           {
           "id": 3,
-          "icono":"img.com",
+          "icono":"https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/2048px-Angular_full_color_logo.svg.png",
             "nombre": "Angular",
             "profesor": "Lucas Pilar",
             "vacantes":5,
@@ -57,7 +57,7 @@
           },
           {
             "id": 4,
-            "icono":"img.com",
+            "icono":"https://icons.iconarchive.com/icons/martz90/hex/512/html-5-icon.png",
             "nombre": "Desarrollo web",
             "profesor": "Melisa Morales",
             "vacantes":25,
@@ -69,7 +69,7 @@
           },
           {
             "id": 5,
-            "icono":"img.com",
+            "icono":"https://cdn.icon-icons.com/icons2/2415/PNG/512/java_original_wordmark_logo_icon_146459.png",
             "nombre": "Java",
             "profesor": "Horacio Gomez",
             "vacantes":15,
@@ -82,7 +82,7 @@
       {
         
       "id": 1,
-      "avatar":"img.com",
+      "avatar":"https://cdn.pixabay.com/photo/2021/01/04/10/41/icon-5887126_960_720.png",
       "nombre": "Camila",
       "apellido": "Arena",
       "email":"arenabelu@gmail.com",
@@ -93,7 +93,7 @@
       },
       {
         "id": 2,
-        "avatar":"img.com",
+        "avatar":"https://cdn.pixabay.com/photo/2021/02/12/07/03/icon-6007530_640.png",
         "nombre": "Lucia",
         "apellido": "Velazques",
         "email":"luciave@gmail.com",
@@ -103,7 +103,7 @@
       },
       {
         "id": 3,
-        "avatar":"img.com",
+        "avatar":"https://cdn-icons-png.flaticon.com/512/147/147144.png",
       "nombre": "Matias",
       "apellido": "Carmona",
       "email":"maticarmona@gmail.com",
@@ -112,7 +112,7 @@
       },
       {
         "id": 4,
-        "avatar":"img.com",
+        "avatar":"https://cdn-icons-png.flaticon.com/512/147/147142.png?w=360",
         "nombre": "Nicolas",
         "apellido": "Perez",
         "email":"perezn@gmail.com",
@@ -122,7 +122,7 @@
       },
       {
         "id": 5,
-        "avatar":"img.com",
+        "avatar":"https://cdn.icon-icons.com/icons2/2643/PNG/512/female_woman_people_person_avatar_black_tone_icon_159371.png",
         "nombre": "Abigail",
         "apellido": "Gomez",
         "email":"abigomez@gmail.com",
