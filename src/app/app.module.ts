@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -10,6 +10,10 @@ import { AbmCursosComponent } from './pages/cursos/abm-cursos/abm-cursos.compone
 import { CursosComponent } from './pages/cursos/cursos.component';
 import { CursosModule } from './pages/cursos/cursos.module';
 import {  HttpClientModule } from '@angular/common/http';
+import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { actionReducerMap } from './store';
+import { EffectsModule } from '@ngrx/effects';
 
 @NgModule({
   declarations: [
@@ -22,7 +26,9 @@ import {  HttpClientModule } from '@angular/common/http';
     NgbModule,
     AppRoutingModule,
     PipesModule,   
-    HttpClientModule
+    HttpClientModule, 
+    StoreModule.forRoot(actionReducerMap, {}), 
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }), EffectsModule.forRoot([])
     //CursosModule,
   ],
   providers: [],

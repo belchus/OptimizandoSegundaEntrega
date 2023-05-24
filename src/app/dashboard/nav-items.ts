@@ -13,6 +13,10 @@ const links:NavItem[]=[
         path:'cursos',
         title:'Cursos'
     },
+    {
+        path:'inscripciones',
+        title:'Inscripciones'
+    },
 
 ]
 

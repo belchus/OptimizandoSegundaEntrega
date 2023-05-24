@@ -1,5 +1,6 @@
 
 
+
   export interface Usuario {
     id: number;
     nombre: string;
@@ -14,6 +15,7 @@
 
   export interface Curso {
     id: number;
+    cursoid:number;
     nombre: string;
     profesor:string;
     vacantes:number;
@@ -22,7 +24,16 @@
     
   }
 
+  export interface CursoIns{
+    cursoid:number;
+    nombre:string;
 
+
+}
+
+export interface CursoId extends Curso{
+  idcurso:CursoId;
+}
   
   export interface CrearCursoPayload {
     nombre: string;

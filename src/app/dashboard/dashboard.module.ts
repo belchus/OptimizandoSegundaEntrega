@@ -37,6 +37,10 @@ import {MatCardModule} from '@angular/material/card';
       {
         path: 'cursos',
         loadChildren: () => import('../pages/cursos/cursos.module').then((m) => m.CursosModule),
+      },
+      {
+        path:'inscripciones',
+        loadChildren:()=> import('../pages/inscripciones/inscripciones.module').then((m) => m.InscripcionesModule),
       }
     ])
   ],

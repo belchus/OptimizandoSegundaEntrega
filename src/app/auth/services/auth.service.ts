@@ -1,8 +1,12 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { Store } from '@ngrx/store';
 import { Observable, BehaviorSubject, map, catchError, throwError, of } from 'rxjs';
 import { Usuario } from 'src/app/core/models/alumnos.model';
+import { AppState } from 'src/app/store';
+import { EliminarUsuarioAuth, EstablecerUsuarioAuth } from 'src/app/store/auth/auth.actions';
+import { selectAuthUser } from 'src/app/store/auth/auth.selectors';
 import { enviroment } from 'src/enviroments/enviroments.prod';
 
 
@@ -16,17 +20,20 @@ export interface LoginFormValue {
   })
   export class AuthService {
   
-    private authUser$ = new BehaviorSubject<Usuario | null>(null);
+   // private authUser$ = new BehaviorSubject<Usuario | null>(null);
   
     constructor(
       private router: Router,
       private httpClient: HttpClient,
+    private store:Store<AppState>
     ) { }
-  
+
     obtenerUsuarioAutenticado(): Observable<Usuario | null> {
-      return this.authUser$.asObservable();
+      return this.store.select(selectAuthUser);
     }
-  
+    establecerUsuarioAutenticado(usuario:Usuario, token:string):void{
+      this.store.dispatch(EstablecerUsuarioAuth({payload:{...usuario,token}}))
+    }
     login(formValue: LoginFormValue): void {
       this.httpClient.get<Usuario[]>(
         `${enviroment.apiBaseUrl}/usuarios`,
@@ -40,7 +47,7 @@ export interface LoginFormValue {
           const usuarioAutenticado = usuarios[0];
           if (usuarioAutenticado) {
             localStorage.setItem('token', usuarioAutenticado.token)
-            this.authUser$.next(usuarioAutenticado);
+            this.establecerUsuarioAutenticado(usuarioAutenticado,usuarioAutenticado.token);
             this.router.navigate(['dashboard']);
           } else {
             alert('¡Usuario y contraseña incorrectos!')
@@ -51,7 +58,7 @@ export interface LoginFormValue {
   
     logout(): void {
       localStorage.removeItem('token');
-      this.authUser$.next(null);
+      this.store.dispatch(EliminarUsuarioAuth());
       this.router.navigate(['auth']);
     }
   
@@ -70,7 +77,7 @@ export interface LoginFormValue {
             const usuarioAutenticado = usuarios[0];
             if (usuarioAutenticado) {
               localStorage.setItem('token', usuarioAutenticado.token)
-              this.authUser$.next(usuarioAutenticado);
+              this.establecerUsuarioAutenticado(usuarioAutenticado,usuarioAutenticado.token);
             }
             return !!usuarioAutenticado;
           }),

@@ -48,6 +48,8 @@ export class CursosService {
             {
               id: cursos.length + 1,
               ...payload,
+              cursoid: cursos.length + 1,
+              ...payload,
             },
           ]);
         },

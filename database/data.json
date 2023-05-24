@@ -23,6 +23,7 @@
     "cursos":[
         {
             "id": 1,
+            "cursoid":1,
             "icono":"https://cdn3.iconfinder.com/data/icons/logos-and-brands-adobe/512/267_Python-512.png",
             "nombre": "Python",
             "profesor": "Manuel Rodriguez",
@@ -34,6 +35,7 @@
           },
           {
             "id": 2,
+            "cursoid":2,
             "icono":"https://cdn-icons-png.flaticon.com/512/1420/1420398.png",
             "nombre": "Base de Datos",
             "profesor": "Manuel Rodriguez",
@@ -45,6 +47,7 @@
           },
           {
           "id": 3,
+          "cursoid":3,
           "icono":"https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/2048px-Angular_full_color_logo.svg.png",
             "nombre": "Angular",
             "profesor": "Lucas Pilar",
@@ -57,6 +60,7 @@
           },
           {
             "id": 4,
+            "cursoid":4,
             "icono":"https://icons.iconarchive.com/icons/martz90/hex/512/html-5-icon.png",
             "nombre": "Desarrollo web",
             "profesor": "Melisa Morales",
@@ -69,6 +73,7 @@
           },
           {
             "id": 5,
+            "cursoid":5,
             "icono":"https://cdn.icon-icons.com/icons2/2415/PNG/512/java_original_wordmark_logo_icon_146459.png",
             "nombre": "Java",
             "profesor": "Horacio Gomez",
@@ -82,6 +87,7 @@
       {
         
       "id": 1,
+      "alumnoid":1,
       "avatar":"https://cdn.pixabay.com/photo/2021/01/04/10/41/icon-5887126_960_720.png",
       "nombre": "Camila",
       "apellido": "Arena",
@@ -93,6 +99,7 @@
       },
       {
         "id": 2,
+        "alumnoid":2,
         "avatar":"https://cdn.pixabay.com/photo/2021/02/12/07/03/icon-6007530_640.png",
         "nombre": "Lucia",
         "apellido": "Velazques",
@@ -103,6 +110,7 @@
       },
       {
         "id": 3,
+        "alumnoid":3,
         "avatar":"https://cdn-icons-png.flaticon.com/512/147/147144.png",
       "nombre": "Matias",
       "apellido": "Carmona",
@@ -112,6 +120,7 @@
       },
       {
         "id": 4,
+        "alumnoid":4,
         "avatar":"https://cdn-icons-png.flaticon.com/512/147/147142.png?w=360",
         "nombre": "Nicolas",
         "apellido": "Perez",
@@ -122,6 +131,7 @@
       },
       {
         "id": 5,
+        "alumnoid":5,
         "avatar":"https://cdn.icon-icons.com/icons2/2643/PNG/512/female_woman_people_person_avatar_black_tone_icon_159371.png",
         "nombre": "Abigail",
         "apellido": "Gomez",
@@ -129,5 +139,24 @@
        "promedio":4,
        "fecha_registro":"02/05/2023"
       }
+    ],
+    "inscripciones":[
+      {
+        "id":1,
+        "cursoid":2,
+        "alumnoid":2
+
+      }, {
+        "id":2,
+        "cursoid":3,
+        "alumnoid":1
+
+      },{
+        "id":3,
+        "cursoid":1,
+        "alumnoid":1
+
+      }
     ]
+
 }

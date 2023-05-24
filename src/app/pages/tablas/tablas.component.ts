@@ -9,6 +9,7 @@ import { AlumnosService } from './services/alumnos.service';
 
 export interface Alumno {
   id: number;
+  alumnoid:number;
   nombre: string;
   apellido: string;
   email: string;
