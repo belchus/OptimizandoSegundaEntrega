@@ -52,7 +52,7 @@ export class AlumnosService {
             {
               id: alumnos.length + 1,
               ...payload,
-              alumnoid:alumnos.length + 1,
+              alumnoId:alumnos.length + 1,
               ...payload,
             },
           ]);

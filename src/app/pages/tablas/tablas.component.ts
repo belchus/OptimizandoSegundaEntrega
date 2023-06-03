@@ -9,7 +9,7 @@ import { AlumnosService } from './services/alumnos.service';
 
 export interface Alumno {
   id: number;
-  alumnoid:number;
+  alumnoId:number;
   nombre: string;
   apellido: string;
   email: string;
@@ -70,6 +70,7 @@ irAlDetalle(alumnoId:number):void{
             ...valor,
             fecha_registro: new Date(),
             id: this.dataSource.data.length + 1,
+            alumnoId: this.dataSource.data.length + 1,
           }
         ];
       }

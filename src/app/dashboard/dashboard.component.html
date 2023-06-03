@@ -26,9 +26,21 @@
     <p>{{ (authUser$ | async)?.nombre }}</p>
     <p>{{ (authUser$ | async)?.apellido }}</p>
     <p>{{ (authUser$ | async)?.email }}</p>
+    <p>{{ (authUser$ | async)?.role }}</p>
 
     <mat-nav-list>
-      <a mat-list-item [routerLink]="link.path" *ngFor="let link of links">{{ link.title }}</a>
+      <ng-container *ngFor="let link of links">
+        <a
+          [routerLink]="link.path"
+          mat-list-item
+          *ngIf="
+            !link.allowedRoles.length || (verifyRole(link) | async)
+          "
+        >
+          <mat-icon *ngIf="link.icon">{{ link.icon }}</mat-icon>
+          {{ link.title }}
+        </a>
+    </ng-container>
       <a (click)="logout()" mat-list-item><mat-icon>logout</mat-icon>Salir</a>    
     </mat-nav-list>
 

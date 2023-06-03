@@ -13,6 +13,7 @@ import {MatListModule} from '@angular/material/list';
 import { CursosComponent } from '../pages/cursos/cursos.component';
 import { CursosModule } from '../pages/cursos/cursos.module';
 import {MatCardModule} from '@angular/material/card';
+import { AdminGuard } from '../auth/guards/admin.guard';
 @NgModule({
   declarations: [
     DashboardComponent
@@ -36,6 +37,7 @@ import {MatCardModule} from '@angular/material/card';
       },
       {
         path: 'cursos',
+        canActivate:[AdminGuard],
         loadChildren: () => import('../pages/cursos/cursos.module').then((m) => m.CursosModule),
       },
       {

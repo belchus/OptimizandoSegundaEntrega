@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
-import links from './nav-items';
+import links, { NavItem } from './nav-items';
 import { Router } from '@angular/router';
-import { Observable, Subject } from 'rxjs';
+import { Observable, Subject, map } from 'rxjs';
 import { Usuario } from '../core/models/alumnos.model';
 import { AuthService } from '../auth/services/auth.service';
+import { EstablecerUsuarioAuth } from '../store/auth/auth.actions';
 
 @Component({
   selector: 'app-dashboard',
@@ -44,5 +45,11 @@ export class DashboardComponent {
 
   logout(): void {
     this.authService.logout();
+  }
+  verifyRole(link:NavItem):Observable<boolean>{
+   return this.authUser$.pipe(map((userAuth)=>
+        link.allowedRoles.some((r)=>r ===userAuth?.role)
+   )
+    );
   }
 }

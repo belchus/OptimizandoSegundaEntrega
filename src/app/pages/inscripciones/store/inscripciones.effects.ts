@@ -9,7 +9,7 @@ import { InscripService } from '../services/inscrip-service.service';
 @Injectable()
 export class InscripcionesEffects {
 
-  loadInscripcioness$ = createEffect(() => {
+  loadInscripciones$ = createEffect(() => {
     return this.actions$.pipe(
 
       ofType(InscripcionesActions.loadInscripciones),
@@ -18,6 +18,29 @@ export class InscripcionesEffects {
         this.inscripService.getAllInscrip().pipe(
           map(data => InscripcionesActions.loadInscripcionesSuccess({ data })),
           catchError(error => of(InscripcionesActions.loadInscripcionesFailure({ error }))))
+      )
+    );
+  });
+  createInscription$= createEffect(() => {
+    return this.actions$.pipe(
+      ofType(InscripcionesActions.createInscription),
+      concatMap((action) =>
+        /** An EMPTY observable only emits completion. Replace with your own observable API request */
+        this.inscripService.createInscripcion(action.data).pipe(
+          map(res => InscripcionesActions.createInscriptionSuccess({ data:res })),
+          catchError(error => of(InscripcionesActions.createInscriptionFailure({ error }))))
+      )
+    );
+  });
+  deleteInscripcione$ = createEffect(() => {
+    return this.actions$.pipe(
+
+      ofType(InscripcionesActions.deleteInscription),
+      concatMap((action) =>
+        /** An EMPTY observable only emits completion. Replace with your own observable API request */
+        this.inscripService.deleteInscriptionById(action.id).pipe(
+          map(data => InscripcionesActions.deleteInscriptionSuccess({ data:action.id })),
+          catchError(error => of(InscripcionesActions.deleteInscriptionFailure({ error }))))
       )
     );
   });

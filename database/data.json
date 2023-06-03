@@ -1,162 +1,135 @@
 {
-    "usuarios":[
-        {
-            "id":1,
-            "nombre":"camila",
-            "apellido":"arena",
-            "email":"arenabelu@gmail.com",
-            "password":"camila2",
-            "token":"abc43",
-            "role": "admin",
-            "avatar":"https://cdn.pixabay.com/photo/2021/01/04/10/41/icon-5887126_960_720.png"
-        },  {
-            "id":2,
-            "nombre":"prueba",
-            "apellido":"prueba",
-            "email":"esprueba@gmail.com",
-            "password":"prueba2",
-            "token":"defg54",
-            "role": "user",
-            "avatar":"https://cdn.pixabay.com/photo/2021/01/04/10/41/icon-5887126_960_720.png"
-        }
-    ],
-    "cursos":[
-        {
-            "id": 1,
-            "cursoid":1,
-            "icono":"https://cdn3.iconfinder.com/data/icons/logos-and-brands-adobe/512/267_Python-512.png",
-            "nombre": "Python",
-            "profesor": "Manuel Rodriguez",
-            "vacantes":9,
-            "fecha_inicio":"09/20/23"
-         
-          
-      
-          },
-          {
-            "id": 2,
-            "cursoid":2,
-            "icono":"https://cdn-icons-png.flaticon.com/512/1420/1420398.png",
-            "nombre": "Base de Datos",
-            "profesor": "Manuel Rodriguez",
-            "vacantes":20,
-            "fecha_inicio":"10/10/23"
-           
- 
-            
-          },
-          {
-          "id": 3,
-          "cursoid":3,
-          "icono":"https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/2048px-Angular_full_color_logo.svg.png",
-            "nombre": "Angular",
-            "profesor": "Lucas Pilar",
-            "vacantes":5,
-            "fecha_inicio":"05/10/23"
-          
-        
-       
-          
-          },
-          {
-            "id": 4,
-            "cursoid":4,
-            "icono":"https://icons.iconarchive.com/icons/martz90/hex/512/html-5-icon.png",
-            "nombre": "Desarrollo web",
-            "profesor": "Melisa Morales",
-            "vacantes":25,
-            "fecha_inicio":"11/12/23"
-          
-         
-       
-          
-          },
-          {
-            "id": 5,
-            "cursoid":5,
-            "icono":"https://cdn.icon-icons.com/icons2/2415/PNG/512/java_original_wordmark_logo_icon_146459.png",
-            "nombre": "Java",
-            "profesor": "Horacio Gomez",
-            "vacantes":15,
-            "fecha_inicio":"05/12/23"
-          
-          
-          }
-    ],
-    "Alumnos":[
-      {
-        
+  "usuarios": [
+    {
       "id": 1,
-      "alumnoid":1,
-      "avatar":"https://cdn.pixabay.com/photo/2021/01/04/10/41/icon-5887126_960_720.png",
+      "nombre": "camila",
+      "apellido": "arena",
+      "email": "arenabelu@gmail.com",
+      "password": "camila2",
+      "token": "abc43",
+      "role": "admin",
+      "avatar": "https://cdn.pixabay.com/photo/2021/01/04/10/41/icon-5887126_960_720.png"
+    },
+    {
+      "id": 2,
+      "nombre": "prueba",
+      "apellido": "prueba",
+      "email": "esprueba@gmail.com",
+      "password": "prueba2",
+      "token": "defg54",
+      "role": "user",
+      "avatar": "https://cdn.pixabay.com/photo/2021/01/04/10/41/icon-5887126_960_720.png"
+    }
+  ],
+  "cursos": [
+    {
+      "id": 1,
+      "cursoId": 1,
+      "icono": "https://cdn3.iconfinder.com/data/icons/logos-and-brands-adobe/512/267_Python-512.png",
+      "nombre": "Python",
+      "profesor": "Manuel Rodriguez",
+      "vacantes": 9,
+      "fecha_inicio": "09/20/23"
+    },
+    {
+      "id": 2,
+      "cursoId": 2,
+      "icono": "https://cdn-icons-png.flaticon.com/512/1420/1420398.png",
+      "nombre": "Base de Datos",
+      "profesor": "Manuel Rodriguez",
+      "vacantes": 20,
+      "fecha_inicio": "10/10/23"
+    },
+    {
+      "id": 3,
+      "cursoId": 3,
+      "icono": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/2048px-Angular_full_color_logo.svg.png",
+      "nombre": "Angular",
+      "profesor": "Lucas Pilar",
+      "vacantes": 5,
+      "fecha_inicio": "05/10/23"
+    },
+    {
+      "id": 4,
+      "cursoId": 4,
+      "icono": "https://icons.iconarchive.com/icons/martz90/hex/512/html-5-icon.png",
+      "nombre": "Desarrollo web",
+      "profesor": "Melisa Morales",
+      "vacantes": 25,
+      "fecha_inicio": "11/12/23"
+    },
+    {
+      "id": 5,
+      "cursoId": 5,
+      "icono": "https://cdn.icon-icons.com/icons2/2415/PNG/512/java_original_wordmark_logo_icon_146459.png",
+      "nombre": "Java",
+      "profesor": "Horacio Gomez",
+      "vacantes": 15,
+      "fecha_inicio": "05/12/23"
+    }
+  ],
+  "alumnos": [
+    {
+      "id": 1,
+      "alumnoId": 1,
+      "avatar": "https://cdn.pixabay.com/photo/2021/01/04/10/41/icon-5887126_960_720.png",
       "nombre": "Camila",
       "apellido": "Arena",
-      "email":"arenabelu@gmail.com",
-      "promedio":9,
-      "fecha_registro":"10/05/2022"
-
-    
-      },
-      {
-        "id": 2,
-        "alumnoid":2,
-        "avatar":"https://cdn.pixabay.com/photo/2021/02/12/07/03/icon-6007530_640.png",
-        "nombre": "Lucia",
-        "apellido": "Velazques",
-        "email":"luciave@gmail.com",
-        "promedio":5,
-        "fecha_registro":"10/05/2022"
-
-      },
-      {
-        "id": 3,
-        "alumnoid":3,
-        "avatar":"https://cdn-icons-png.flaticon.com/512/147/147144.png",
+      "email": "arenabelu@gmail.com",
+      "promedio": 9,
+      "fecha_registro": "10/05/2022"
+    },
+    {
+      "id": 2,
+      "alumnoId": 2,
+      "avatar": "https://cdn.pixabay.com/photo/2021/02/12/07/03/icon-6007530_640.png",
+      "nombre": "Lucia",
+      "apellido": "Velazques",
+      "email": "luciave@gmail.com",
+      "promedio": 5,
+      "fecha_registro": "10/05/2022"
+    },
+    {
+      "id": 3,
+      "alumnoId": 3,
+      "avatar": "https://cdn-icons-png.flaticon.com/512/147/147144.png",
       "nombre": "Matias",
       "apellido": "Carmona",
-      "email":"maticarmona@gmail.com",
-      "promedio":6,
-      "fecha_registro":"10/08/2022"
-      },
-      {
-        "id": 4,
-        "alumnoid":4,
-        "avatar":"https://cdn-icons-png.flaticon.com/512/147/147142.png?w=360",
-        "nombre": "Nicolas",
-        "apellido": "Perez",
-        "email":"perezn@gmail.com",
-        "promedio":7,
-        "fecha_registro":"9/03/2022"
-       
-      },
-      {
-        "id": 5,
-        "alumnoid":5,
-        "avatar":"https://cdn.icon-icons.com/icons2/2643/PNG/512/female_woman_people_person_avatar_black_tone_icon_159371.png",
-        "nombre": "Abigail",
-        "apellido": "Gomez",
-        "email":"abigomez@gmail.com",
-       "promedio":4,
-       "fecha_registro":"02/05/2023"
-      }
-    ],
-    "inscripciones":[
-      {
-        "id":1,
-        "cursoid":2,
-        "alumnoid":2
-
-      }, {
-        "id":2,
-        "cursoid":3,
-        "alumnoid":1
-
-      },{
-        "id":3,
-        "cursoid":1,
-        "alumnoid":1
-
-      }
-    ]
-
+      "email": "maticarmona@gmail.com",
+      "promedio": 6,
+      "fecha_registro": "10/08/2022"
+    },
+    {
+      "id": 4,
+      "alumnoId": 4,
+      "avatar": "https://cdn-icons-png.flaticon.com/512/147/147142.png?w=360",
+      "nombre": "Nicolas",
+      "apellido": "Perez",
+      "email": "perezn@gmail.com",
+      "promedio": 7,
+      "fecha_registro": "9/03/2022"
+    },
+    {
+      "id": 5,
+      "alumnoId": 5,
+      "avatar": "https://cdn.icon-icons.com/icons2/2643/PNG/512/female_woman_people_person_avatar_black_tone_icon_159371.png",
+      "nombre": "Abigail",
+      "apellido": "Gomez",
+      "email": "abigomez@gmail.com",
+      "promedio": 4,
+      "fecha_registro": "02/05/2023"
+    }
+  ],
+  "inscripciones": [
+    {
+      "cursoId": 4,
+      "alumnoId": 4,
+      "id": 4
+    },
+    {
+      "cursoId": 2,
+      "alumnoId": 3,
+      "id": 2
+    }
+  ]
 }

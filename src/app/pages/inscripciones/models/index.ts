@@ -5,16 +5,21 @@ import { Alumno } from "../../tablas/tablas.component";
 
 export interface Inscripcion{
     id:number;
-    alumnoid:number;
-    cursoid:number
+    alumnoId:number;
+    cursoId:number;
+
 }
 
 export interface InscripcionAlumno extends Inscripcion{
-    estudiante:Alumno;
+    alumno:Alumno;
 }
 
 export interface InscripcionCurso extends Inscripcion{
     curso:Curso
 }
-
+export interface CreateInscrption{
+    id:number;
+    alumnoId:number;
+    cursoId:number;
+}
 export type InscripcionCompleta = InscripcionAlumno & InscripcionCurso;

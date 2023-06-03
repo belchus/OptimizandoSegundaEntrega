@@ -10,6 +10,7 @@ export interface Curso {
   vacantes: number;
   profesor:string;
   fecha_inicio: Date;
+  cursoId:number;
 
 
 }
@@ -66,6 +67,7 @@ export class CursosComponent {
               ...valor,
               fecha_inicio: new Date(),
               id: this.dataSource.data.length + 1,
+              cursoId: this.dataSource.data.length + 1,
             }
           ];
         }

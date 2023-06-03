@@ -6,14 +6,14 @@ export const inscripcionesFeatureKey = 'inscripciones';
 
 export interface State {
   load:boolean;
-  inscripcoionesList:InscripcionCompleta[];
+  inscripcionesList:InscripcionCompleta[];
   error:unknown;
   
 }
 
 export const initialState: State = {
   load:false,
-  inscripcoionesList:[],
+  inscripcionesList:[],
   error:null,
 };
 
@@ -31,10 +31,64 @@ export const reducer = createReducer<State>(
     return{
       ...state,
       load:false,
-      inscripcoionesList:action.data
+      inscripcionesList:action.data
     }
   }),
-  on(InscripcionesActions.loadInscripcionesFailure, (state, action) => state),
+  on(InscripcionesActions.deleteInscription, state =>{
+    return{
+      ...state,
+      load:true
+    }
+  }),
+  on(InscripcionesActions.loadInscripcionesFailure, (state, action) => {return{
+    ...state,
+    load:false,
+    error:action.error
+  }
+  }),
+
+  on(InscripcionesActions.deleteInscriptionSuccess,(state,action)=>{
+    return{
+      ...state,
+      inscripcionesList:state.inscripcionesList.filter((i)=>i.id  == action.data),
+      load:false
+    }
+   
+   
+  }),
+  on(InscripcionesActions.deleteInscriptionFailure,(state,action)=>{
+    return{
+      ...state,
+      load:false,
+      error:action.error
+    }
+   
+  }),
+  
+  on(InscripcionesActions.createInscription, (state) => {
+    return {
+      ...state,
+      loading: true,
+    }
+  }),
+  
+  on(InscripcionesActions.createInscriptionSuccess,(state,action)=>{
+    const newInscription = action.data;
+    return{
+      ...state,
+      load:true,
+     inscripcionesList:[...state.inscripcionesList,newInscription]
+      
+
+    }
+  }),
+  on(InscripcionesActions.createInscriptionFailure, (state, action) => {
+    return {
+      ...state,
+      loading: false,
+      error: action.error,
+    }
+  }),
 );
 
 export const inscripcionesFeature = createFeature({
