@@ -14,12 +14,14 @@ const links:NavItem[]=[
     {
         path:'cursos',
         title:'Cursos',
+        icon: 'folder',
         allowedRoles:[]
     },
     {
         path:'inscripciones',
         title:'Inscripciones',
-        allowedRoles:['admin'],
+        icon: 'list_alt',
+        allowedRoles:[],
     },
 
 ]

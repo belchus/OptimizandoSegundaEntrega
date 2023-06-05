@@ -3,7 +3,10 @@ import { MatTableDataSource } from '@angular/material/table';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AbmCursosComponent } from './abm-cursos/abm-cursos.component';
 import { CursosService } from './services/cursos.service';
-import { Subscription } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
+import { Usuario } from 'src/app/core/models/alumnos.model';
+import { Store } from '@ngrx/store';
+import { selectAuthUser } from 'src/app/store/auth/auth.selectors';
 export interface Curso {
   id: number;
   nombre: string;
@@ -11,6 +14,7 @@ export interface Curso {
   profesor:string;
   fecha_inicio: Date;
   cursoId:number;
+  icono:string;
 
 
 }
@@ -26,12 +30,16 @@ export class CursosComponent {
      displayedColumns: string[] = ['id', 'icono','nombre','profesor', 'vacantes','fecha_inicio','delete','ver_detalle','edit'];
     
   cursosSuscription: Subscription | null = null;
+  authUser$: Observable<Usuario | null>;
 
   constructor(
     private cursosService: CursosService,
     private dialog: MatDialog,
-    private router:Router,private activateRoute:ActivatedRoute
+    private store:Store,
+    private router:Router,
+    private activateRoute:ActivatedRoute
   ) {
+    this.authUser$=this.store.select(selectAuthUser)
   }
   ngOnDestroy(): void {
     this.cursosSuscription?.unsubscribe();

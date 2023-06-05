@@ -34,23 +34,24 @@ export const reducer = createReducer<State>(
       inscripcionesList:action.data
     }
   }),
-  on(InscripcionesActions.deleteInscription, state =>{
-    return{
-      ...state,
-      load:true
-    }
-  }),
+  
   on(InscripcionesActions.loadInscripcionesFailure, (state, action) => {return{
     ...state,
     load:false,
     error:action.error
   }
   }),
+  on(InscripcionesActions.deleteInscription, state =>{
+    return{
+      ...state,
+      load:true
+    }
+  }),
 
   on(InscripcionesActions.deleteInscriptionSuccess,(state,action)=>{
     return{
       ...state,
-      inscripcionesList:state.inscripcionesList.filter((i)=>i.id  == action.data),
+      inscripcionesList:state.inscripcionesList.filter((i)=>i.id  !== action.data),
       load:false
     }
    

@@ -13,6 +13,7 @@ import { AbmCursosComponent } from './abm-cursos/abm-cursos.component';
 import { CursosComponent } from './cursos.component';
 import { CursoDetalleComponent } from './curso-detalle/curso-detalle.component';
 import { CursosRoutingModule } from './cursos-routing.module';
+import {MatCardModule} from '@angular/material/card';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { CursosRoutingModule } from './cursos-routing.module';
     ReactiveFormsModule,
     DirectivesModule,
     MatTableModule,
-    CursosRoutingModule
+    CursosRoutingModule,
+    MatCardModule
   ],
   exports:[
     CursosComponent

@@ -8,7 +8,7 @@
       "password": "camila2",
       "token": "abc43",
       "role": "admin",
-      "avatar": "https://cdn.pixabay.com/photo/2021/01/04/10/41/icon-5887126_960_720.png"
+      "avatar": "https://cdn-icons-png.flaticon.com/512/219/219989.png"
     },
     {
       "id": 2,
@@ -18,7 +18,7 @@
       "password": "prueba2",
       "token": "defg54",
       "role": "user",
-      "avatar": "https://cdn.pixabay.com/photo/2021/01/04/10/41/icon-5887126_960_720.png"
+      "avatar": "https://cdn-icons-png.flaticon.com/512/236/236831.png"
     }
   ],
   "cursos": [
@@ -122,14 +122,19 @@
   ],
   "inscripciones": [
     {
-      "cursoId": 4,
-      "alumnoId": 4,
+      "cursoId": 2,
+      "alumnoId": 5,
+      "id": 3
+    },
+    {
+      "cursoId": 1,
+      "alumnoId": 3,
       "id": 4
     },
     {
-      "cursoId": 2,
-      "alumnoId": 3,
-      "id": 2
+      "cursoId": 3,
+      "alumnoId": 2,
+      "id": 5
     }
   ]
 }

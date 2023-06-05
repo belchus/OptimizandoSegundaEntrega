@@ -46,7 +46,7 @@
       <ng-container matColumnDef="edit">
         <th appFontSize mat-header-cell *matHeaderCellDef></th>
         <td mat-cell *matCellDef="let curso">   <div class="add">
-          <button (click)="editarCurso(curso)" mat-flat-button>
+          <button *ngIf="(authUser$ | async)?.role==='admin'"(click)="editarCurso(curso)" mat-flat-button>
             <mat-icon>edit</mat-icon>
       
           </button>
@@ -65,7 +65,7 @@
       <ng-container matColumnDef="delete">
         <th appFontSize mat-header-cell *matHeaderCellDef></th>
         <td mat-cell *matCellDef="let curso">   <div class="add">
-          <button (click)="delete(curso)" mat-flat-button>
+          <button *ngIf="(authUser$ | async)?.role==='admin'"(click)="delete(curso)" mat-flat-button>
             <mat-icon>delete</mat-icon>
       
           </button>
@@ -79,8 +79,10 @@
     </table>
     
     <div class="add">
-      <button (click)="abrirABMCursos()" color="primary" mat-flat-button>
-        <mat-icon>assignment_add</mat-icon>
+      <button  *ngIf="(authUser$ | async)?.role==='admin'"(click)="abrirABMCursos()" color="primary" mat-flat-button>
+        <mat-icon>
+          create_new_folder
+        </mat-icon>
         Agregar nuevo Curso
       </button>
     

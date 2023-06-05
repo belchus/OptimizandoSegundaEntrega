@@ -1,0 +1,33 @@
+<mat-card class="example-card">
+    <mat-card-header>
+      <div mat-card-avatar ><img  class="avatar" src="{{cursos?.icono}}" alt=""></div>
+      <mat-card-title>{{cursos?.nombre}}</mat-card-title>
+      <mat-card-subtitle>{{cursos?.vacantes}} vacantes</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+ 
+        <div class="col-12 field"><ul>
+            <li>
+                <mat-icon>
+                    collections_bookmark
+                </mat-icon>
+                ID : {{ cursos?.id}} 
+            </li>
+            <li><mat-icon>
+          
+                school
+                </mat-icon>
+                Profesor : {{cursos?.profesor}}
+            </li>
+            <li>
+                <mat-icon>
+          
+                today
+                </mat-icon> 
+                Inicio del curso : {{cursos?.fecha_inicio}}
+            </li>
+        </ul>
+        </div>
+
+    </mat-card-content>
+

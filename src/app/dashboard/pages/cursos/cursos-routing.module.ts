@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { CursosComponent } from './cursos.component';
 import { CursoDetalleComponent } from './curso-detalle/curso-detalle.component';
+import { AdminGuard } from 'src/app/auth/guards/admin.guard';
 
 
 
@@ -16,6 +17,7 @@ import { CursoDetalleComponent } from './curso-detalle/curso-detalle.component';
 },
 {
   path:'cursos/:id',
+  canActivate:[AdminGuard],
   component:CursoDetalleComponent
 }
     ])

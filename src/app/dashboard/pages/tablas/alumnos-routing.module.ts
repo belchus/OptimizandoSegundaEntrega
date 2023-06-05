@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { TablasComponent } from './tablas.component';
 import { AlumboDetalleComponent } from './alumbo-detalle/alumbo-detalle.component';
+import { AdminGuard } from 'src/app/auth/guards/admin.guard';
 
 
 
@@ -16,6 +17,7 @@ import { AlumboDetalleComponent } from './alumbo-detalle/alumbo-detalle.componen
 },
 {
   path:'estudiantes/:id',
+  canActivate:[AdminGuard],
   component:AlumboDetalleComponent
 }
     ])

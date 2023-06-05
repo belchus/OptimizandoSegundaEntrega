@@ -1,0 +1,17 @@
+<ng-container *ngIf="state$ | async as state">
+
+    <ng-container >
+      <span  class="titulo" matListItemTitle>Inscripciones</span>
+      <mat-list *ngFor="let inscripcion of state.inscripcionesList">
+        <mat-icon matListItemIcon>list_alt</mat-icon>
+        <mat-list-item>   <img  class="avatar" src="{{inscripcion?.alumno?.avatar}}" alt="">  {{inscripcion?.alumno?.apellido +' '+inscripcion?.alumno?.nombre+ ' - ' + inscripcion?.curso?.nombre }} <img  class="avatar" src="{{inscripcion?.curso?.icono}}" alt="">
+        <mat-icon class="delete" (click)="deleteInscriptionById(inscripcion.id)">delete </mat-icon>
+      </mat-list-item>
+       </mat-list>
+    </ng-container>
+
+  <div class="add">
+ <button (click)="addInscripcion()" type="button" color="primary" mat-flat-button >Agregar nueva inscripcion<mat-icon>list_alt_add</mat-icon></button>
+ 
+  </div>
+  </ng-container>

@@ -18,9 +18,6 @@ import { MatTableDataSource } from '@angular/material/table';
 })
 export class InscripcionesComponent implements OnInit{
   state$:Observable<State>;
-  dataSource = new MatTableDataSource();
-  
-  displayedColumns: string[] = ['cursoId','alumnoId','delete','avatar','icon'];
 
 constructor(private inscripService:InscripService,
   private matDialog:MatDialog,
@@ -35,7 +32,9 @@ this.store.dispatch(InscripcionesActions.loadInscripciones())
   }
 
 deleteInscriptionById(id:number):void{
+   if (confirm('Está seguro?')) {
   this.store.dispatch(InscripcionesActions.deleteInscription({id}))
+   }
 }
 
 addInscripcion():void{

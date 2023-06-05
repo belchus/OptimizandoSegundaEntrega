@@ -15,6 +15,7 @@ import { DirectivesModule } from 'src/app/shared/directives/directives.module';
 import { AlumboDetalleComponent } from './alumbo-detalle/alumbo-detalle.component';
 import { RouterModule } from '@angular/router';
 import { AlumnosRoutingModule } from './alumnos-routing.module';
+import {MatCardModule} from '@angular/material/card';
 
 
 
@@ -35,7 +36,10 @@ import { AlumnosRoutingModule } from './alumnos-routing.module';
     MatButtonModule,
     ReactiveFormsModule,
     DirectivesModule,
-    AlumnosRoutingModule
+    AlumnosRoutingModule,
+    MatCardModule,
+
+    
   ],
   exports: [
     TablasComponent

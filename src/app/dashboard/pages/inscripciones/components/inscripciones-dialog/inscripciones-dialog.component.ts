@@ -2,10 +2,10 @@ import { Component,OnInit} from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { Subject, takeUntil } from 'rxjs';
-import { Curso } from 'src/app/pages/cursos/cursos.component';
-import { CursosService } from 'src/app/pages/cursos/services/cursos.service';
-import { AlumnosService } from 'src/app/pages/tablas/services/alumnos.service';
-import { Alumno } from 'src/app/pages/tablas/tablas.component';
+import { Curso } from 'src/app/dashboard/pages/cursos/cursos.component';
+import { CursosService } from 'src/app/dashboard/pages/cursos/services/cursos.service';
+import { AlumnosService } from 'src/app/dashboard/pages/tablas/services/alumnos.service';
+import { Alumno } from 'src/app/dashboard/pages/tablas/tablas.component';
 import { InscripcionesActions } from '../../store/inscripciones.actions';
 import { CreateInscrption } from '../../models';
 import { DialogRef } from '@angular/cdk/dialog';
@@ -30,9 +30,9 @@ export class InscripcionesDialogComponent {
   courseIdControl = new FormControl<number | null>(null, [Validators.required]);
 
   incripcionForm = new FormGroup({
-    cursoId: this.subjectIdControl,
+    cursoId: this.courseIdControl,
     alumnoId: this.studentIdControl,
-    id: this.courseIdControl,
+
   });
 
   destroyed$ = new Subject<void>();

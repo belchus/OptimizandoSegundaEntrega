@@ -19,9 +19,7 @@ export interface LoginFormValue {
     providedIn: 'root'
   })
   export class AuthService {
-  
-   // private authUser$ = new BehaviorSubject<Usuario | null>(null);
-  
+   
     constructor(
       private router: Router,
       private httpClient: HttpClient,

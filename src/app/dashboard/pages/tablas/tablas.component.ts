@@ -4,8 +4,12 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
 import { AbmAlumnosComponent } from './abm-alumnos/abm-alumnos.component';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Subscription } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 import { AlumnosService } from './services/alumnos.service';
+import { Store } from '@ngrx/store';
+import { selectAuthUser } from 'src/app/store/auth/auth.selectors';
+import { Usuario } from 'src/app/core/models/alumnos.model';
+
 
 export interface Alumno {
   id: number;
@@ -30,14 +34,19 @@ export class TablasComponent {
   dataSource = new MatTableDataSource();
 
   displayedColumns: string[] = ['id','avatar', 'nombreCompleto','email', 'promedio','fecha_registro','delete','ver_detalle','edit'];
-
+   authUser$: Observable<Usuario | null>;
 
   alumnosSuscription: Subscription | null = null;
   constructor(
     private AlumnosService: AlumnosService,
+    private store:Store,
     private matDialog: MatDialog,
     private router:Router,
-    private activateRoute:ActivatedRoute) {}
+    private activateRoute:ActivatedRoute,
+ )
+     {
+      this.authUser$=this.store.select(selectAuthUser)
+     }
   ngOnDestroy(): void {
     this.alumnosSuscription?.unsubscribe();
   }

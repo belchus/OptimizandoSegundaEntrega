@@ -11,7 +11,7 @@
     </button>
     <span appFontSize>
       MyWorkshop  </span>
-      <mat-icon>person</mat-icon>
+      <mat-icon>computer</mat-icon>
     <span class="example-spacer"></span>
 
   </mat-toolbar>
@@ -23,10 +23,8 @@
 
     <img width="50" height="50" src="{{(authUser$ | async)?.avatar}}">
 
-    <p>{{ (authUser$ | async)?.nombre }}</p>
-    <p>{{ (authUser$ | async)?.apellido }}</p>
-    <p>{{ (authUser$ | async)?.email }}</p>
-    <p>{{ (authUser$ | async)?.role }}</p>
+    <p>{{ (authUser$ | async)?.nombre }} - {{ (authUser$ | async)?.role }}</p>
+ 
 
     <mat-nav-list>
       <ng-container *ngFor="let link of links">

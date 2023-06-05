@@ -32,7 +32,7 @@ export class InscripcionesEffects {
       )
     );
   });
-  deleteInscripcione$ = createEffect(() => {
+  deleteInscription$ = createEffect(() => {
     return this.actions$.pipe(
 
       ofType(InscripcionesActions.deleteInscription),

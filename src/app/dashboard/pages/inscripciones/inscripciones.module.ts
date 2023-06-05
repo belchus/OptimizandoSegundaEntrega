@@ -14,7 +14,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { InscripcionesDialogComponent } from './components/inscripciones-dialog/inscripciones-dialog.component';
 import { MatSelectModule } from '@angular/material/select';
-
+import { MatTable, MatTableModule } from '@angular/material/table';
+import {MatListModule} from '@angular/material/list';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { MatSelectModule } from '@angular/material/select';
     MatSelectModule,
     InscripcionesRoutingModule,
     StoreModule.forFeature(inscripcionesFeature),
-    EffectsModule.forFeature([InscripcionesEffects])
+    EffectsModule.forFeature([InscripcionesEffects]),
+    MatListModule
   ]
 })
 export class InscripcionesModule { }

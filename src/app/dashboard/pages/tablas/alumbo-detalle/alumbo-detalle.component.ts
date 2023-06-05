@@ -28,4 +28,11 @@ export class AlumboDetalleComponent implements OnDestroy {
   ngOnDestroy(): void {
     this.destroyed$.next(true);
   }
+
+  delete(alumnoAEliminar: Alumno): void {
+
+    if (confirm('Está seguro?')) {
+      this.alumnosService.eliminarAlumno(alumnoAEliminar.id);
+  
+   }}
 }
