@@ -140,6 +140,11 @@
       "cursoId": 1,
       "alumnoId": 1,
       "id": 6
+    },
+    {
+      "cursoId": 2,
+      "alumnoId": 2,
+      "id": 7
     }
   ]
 }
