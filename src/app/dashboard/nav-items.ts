@@ -1,3 +1,5 @@
+//NavItems con los paths y los roles permitidos en cada uno
+
 export interface NavItem{
     path:string;
     title:string;

@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthService, LoginFormValue } from '../../services/auth.service';
 import { ActivatedRoute } from '@angular/router';
-
+//Componente para el loggeo del usuario
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',

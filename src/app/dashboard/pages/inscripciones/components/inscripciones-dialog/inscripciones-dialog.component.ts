@@ -16,6 +16,7 @@ import { DialogRef } from '@angular/cdk/dialog';
   styleUrls: ['./inscripciones-dialog.component.scss']
 })
 export class InscripcionesDialogComponent {
+  [x: string]: any;
   alumnos: Alumno[] = [];
   cursos: Curso[] = [];
 

@@ -3,6 +3,7 @@ import { ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot, UrlTree } fro
 import { Observable, map } from 'rxjs';
 import { AuthService } from '../services/auth.service';
 
+//AdminGuard para validar el rol del usuario
 @Injectable({
   providedIn: 'root'
 })

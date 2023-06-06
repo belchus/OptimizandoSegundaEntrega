@@ -11,6 +11,8 @@ import { AuthService } from "../../services/auth.service";
 import { AuthServiceMock } from "../../mocks/auth-service.mock";
 
 
+//Se hace prueba del componente Login
+
 describe('Pruebas del LoginComponent',()=>{
  let component:LoginComponent;
 

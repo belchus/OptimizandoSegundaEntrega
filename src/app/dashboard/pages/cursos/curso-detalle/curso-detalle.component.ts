@@ -27,4 +27,5 @@ export class CursoDetalleComponent {
   ngOnDestroy(): void {
     this.destroyed$.next(true);
   }
+
 }

@@ -29,13 +29,6 @@ export class DashboardComponent {
   ) {
 
     this.authUser$ = this.authService.obtenerUsuarioAutenticado()
-
-    // this.authService.obtenerUsuarioAutenticado()
-    //   .pipe(
-    //     // tomar hasta que el componente se destruya
-    //     takeUntil(this.destroyed$)
-    //   )
-    //   .subscribe((usuario) => this.authUser = usuario);
   }
 
   ngOnDestroy(): void {

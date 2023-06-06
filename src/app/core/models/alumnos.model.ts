@@ -1,5 +1,4 @@
-
-
+//Interfaces a utilizar
 
   export interface Usuario {
     id: number;

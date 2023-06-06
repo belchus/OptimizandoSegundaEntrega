@@ -26,8 +26,6 @@ constructor(private inscripService:InscripService,
   }
 
 ngOnInit():void{
- 
-//this.inscripService.getAllInscrip().subscribe(console.log);
 this.store.dispatch(InscripcionesActions.loadInscripciones())
   }
 

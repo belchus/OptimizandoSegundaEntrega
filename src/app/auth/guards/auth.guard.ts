@@ -3,6 +3,7 @@ import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTr
 import { Observable, map } from 'rxjs';
 import { AuthService } from '../services/auth.service';
 
+//AuthGuard para  el usuario autenticado
 @Injectable({
   providedIn: 'root'
 })
