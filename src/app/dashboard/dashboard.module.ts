@@ -50,7 +50,3 @@ import { AdminGuard } from '../auth/guards/admin.guard';
   ]
 })
 export class DashboardModule { }
-
-function m(value: typeof import("c:/Users/belu9/Desktop/Copia para entrega6/src/app/dashboard/pages/tablas/tablas.module")): typeof import("c:/Users/belu9/Desktop/Copia para entrega6/src/app/dashboard/pages/tablas/tablas.module") | PromiseLike<typeof import("c:/Users/belu9/Desktop/Copia para entrega6/src/app/dashboard/pages/tablas/tablas.module")> {
-  throw new Error('Function not implemented.');
-}

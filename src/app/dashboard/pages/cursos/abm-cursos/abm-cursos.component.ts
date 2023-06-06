@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
-
+//Agrega un curso nuevo
 @Component({
   selector: 'app-abm-cursos',
   templateUrl: './abm-cursos.component.html',

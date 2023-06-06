@@ -9,7 +9,7 @@ import { Alumno } from 'src/app/dashboard/pages/tablas/tablas.component';
 import { InscripcionesActions } from '../../store/inscripciones.actions';
 import { CreateInscrption } from '../../models';
 import { DialogRef } from '@angular/cdk/dialog';
-
+//Permite agregar una nueva inscripcion
 @Component({
   selector: 'app-inscripciones-dialog',
   templateUrl: './inscripciones-dialog.component.html',

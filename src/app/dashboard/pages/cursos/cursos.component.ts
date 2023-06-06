@@ -7,6 +7,7 @@ import { Observable, Subscription } from 'rxjs';
 import { Usuario } from 'src/app/core/models/alumnos.model';
 import { Store } from '@ngrx/store';
 import { selectAuthUser } from 'src/app/store/auth/auth.selectors';
+//Permite visualizar los cursos,editarlos y borrarlos
 export interface Curso {
   id: number;
   nombre: string;
